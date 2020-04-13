@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The input element</h1>
+
+<form>
+  <label for="number">Number:</label>
+  <input type="text" id="number" name="number"><br><br><br><br>
+    <label for="sum">Sum</label>
+    <input type="radio" name="choice" id="sum" value="sum"><br>
+    <label for="Product">Product</label>
+    <input type="radio" name="choice" id="Product" value="product"><br><br><br> 
+    <button type='button' onclick="calc()">Calculate</button>
+    <label for="result">Result:</label>
+    <input type="text" id="result" name="result"><br><br><br><br>
+    <p id="demo"></p>
+  </form>
+  <script>
+    function calc(){
+        var n = $('input[id=number]').val();
+        var choice = $('input[name=choice]:checked').val();
+        if (choice == "sum"){
+            var z = 0;
+            for (i=1; i<=n; i++){
+                z = z + i
+            }  
+            $('input[id=result]').val(z)
+        } 
+
+        if (choice == "product"){ 
+            var p = 1;   
+            for (i=n; i>0; i--){
+                p = p * i
+            }
+            $('input[id=result]').val(p)
+        } 
+}
+  </script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js" ></script>
+    <script type="text/javascript"></script>
+</body>
+</html>
+
+
+
